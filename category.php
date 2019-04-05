@@ -20,16 +20,26 @@
                         global $wp_query;
 
                         $save_wpq = $wp_query;
-                        
+
+                        $category = get_category( get_query_var( 'cat' ) );
+                        $args = array(
+                            'cat' => $category->cat_ID,
+                            'paged' => get_query_var( 'paged' ) 
+                        );
                         // ваш запрос и код вывода с пагинацией
                         $wp_query = new WP_Query( $args );
-                        while ( $wp_query->have_posts() ) {
-                            $wp_query->the_post();
-                        
-                            echo 1;
+                        if($wp_query->have_posts()){
+                            while ( $wp_query->have_posts() ) {
+                                $wp_query->the_post();                        
+                                the_title();
+                                echo "<br>";
+                            }
+                            
+                            the_posts_pagination();
                         }
-                        
-                        // пагинация
+                        else {
+                            echo "no posts";
+                        }
                         
                         // вернем global $wp_query
                         wp_reset_postdata();

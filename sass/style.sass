@@ -85,6 +85,21 @@ h1,h2,h3,h4
             font-size: 2.4rem
     &-text
         margin-right: 8rem
+        .navigation
+            display: flex
+            flex-direction: column
+            h2
+                font-size: 2.8rem
+            .nav-links
+                a
+                    color: $main-color
+                    text-decoration: none
+                    transition: all .3s
+                    padding: 1rem
+                    &:hover
+                        color: $active-color
+                .current
+                    color: $shade-color
 
 .sidebar
     &-block
