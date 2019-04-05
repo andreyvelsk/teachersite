@@ -24,7 +24,8 @@
                         $category = get_category( get_query_var( 'cat' ) );
                         $args = array(
                             'cat' => $category->cat_ID,
-                            'paged' => get_query_var( 'paged' ) 
+                            'paged' => get_query_var( 'paged' ),
+                            'mid_size' => 1
                         );
                         // ваш запрос и код вывода с пагинацией
                         $wp_query = new WP_Query( $args );
