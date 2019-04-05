@@ -32,14 +32,40 @@
                         if($wp_query->have_posts()){
                             while ( $wp_query->have_posts() ) {
                                 $wp_query->the_post();                        
-                                the_title();
-                                echo "<br>";
+                                ?>
+                                    <div class="post">
+                                        <div class="post-info">
+                                            <h4>
+                                                <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+                                            </h4>
+                                            <div class="post-text">
+                                                <?php
+                                                    the_excerpt();
+                                                ?>
+                                            </div>
+                                            <div class="post-meta">
+                                                <a href="<?php the_permalink(); ?>">
+                                                    <button class="button-main">
+                                                        Подробнее
+                                                    </button>
+                                                </a>
+                                                <span>
+                                                    <?php the_date('d-m-Y H:i'); ?>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
                             }
                             
                             the_posts_pagination();
                         }
                         else {
-                            echo "no posts";
+                            ?>
+                            <div class="subinfo">
+                                В данной категории нет записей
+                            </div>
+                            <?php
                         }
                         
                         // вернем global $wp_query

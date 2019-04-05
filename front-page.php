@@ -76,16 +76,16 @@ Template Name: Главная
         </p>
         <div class="row section-content">
             <div class="col-md-3 sectionimages-item">
-                <img src="<?php bloginfo('template_directory'); ?> /img/certificate.jpg" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
             </div>
             <div class="col-md-3 sectionimages-item">
-                <img src="img/certificate.jpg" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
             </div>
             <div class="col-md-3 sectionimages-item">
-                <img src="img/certificate.jpg" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
             </div>
             <div class="col-md-3 sectionimages-item">
-                <img src="img/certificate.jpg" alt="">
+                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
             </div>
         </div>
         <div class="sectionimages-more">
@@ -106,22 +106,22 @@ Template Name: Главная
         <div class="row section-content">
             <div class="col-md-3">
                 <div class="sectionimages-item">
-                        <img src="img/main.jpg" alt="">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="sectionimages-item">
-                    <img src="img/main.jpg" alt="">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="sectionimages-item">
-                    <img src="img/main.jpg" alt="">
+                   <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="sectionimages-item">
-                    <img src="img/main.jpg" alt="">
+                   <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@ Template Name: Главная
                                         </svg>
                                 </div>
                                 <div class="item-img">
-                                        <img src="img/response-s.jpg" alt="">
+                                    <img src="<?php bloginfo('template_directory'); ?>/img/response-s.jpg" alt="">
                                 </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@ Template Name: Главная
                                             </svg>
                                     </div>
                                     <div class="item-img">
-                                            <img src="img/response-s.jpg" alt="">
+                                        <img src="<?php bloginfo('template_directory'); ?>/img/response-s.jpg" alt="">
                                     </div>
                             </div>
                         </div>
