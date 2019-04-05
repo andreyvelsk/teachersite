@@ -1,0 +1,131 @@
+section
+    padding: 8rem 0
+    border-bottom: 2px solid #ececec
+    h1
+        font-size: 4.8rem
+    h2
+        font-size: 4.4rem
+        text-align: center
+
+    .section
+        &-content
+            padding-top: 4rem
+
+.main
+    background-color: grey
+    background: url('img/main-bg.jpg') no-repeat center center
+    background-size: cover
+    background-attachment: fixed
+    color: $main-color
+    
+.achievement
+    background: $section2
+    color: $main-color
+    text-align: center
+    &-block
+        padding: 1rem
+        text-align: center
+        transition: all .3s
+        position: relative
+        &:hover
+            z-index: 1
+            &:before
+                width: 104%;
+                height: 104%;
+                opacity: 1
+        &:before
+            position: absolute
+            content: '';
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0)
+            box-shadow: 0 0 22px rgba(0,0,0,.1);
+            transition: all .3s;
+            transform: translate(-50%,-50%);
+            opacity: 0
+            border-radius: 10px
+    &-icon
+        display: inline-block
+        width: 12rem
+        height: 12rem
+        background-color: $active-color
+        border-radius: 50%
+        margin-bottom: 2rem
+        &_middle
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+        i
+            font-size: 8rem
+            color: $shade-color
+
+.sectionimages
+    text-align: center
+    background: $section1
+    &-item
+        transition: all .3s;
+        overflow: hidden;
+        border-radius: 10px
+        &:hover
+            transform: scale(1.1);
+            z-index: 1
+    &-more
+        margin-top: 4rem
+
+.certificates
+    background: $section1
+
+.portfolio 
+    background: $section2
+
+.response
+    background: $section1
+    background-size: cover
+    .slick-slide, .slick-slide * //сброс синей рамки слайдера
+        outline: none !important
+    .item
+        padding: 20px
+        padding-bottom: 80px
+        position: relative
+        &-body
+            background-color: #fff
+            border-radius: 10px
+            padding: 4rem 6rem
+            width: 100%
+            height: 100%
+            box-shadow: 0 0 22px rgba(0,0,0,.1);
+            border-bottom: 4px solid $active-color
+        &-header
+            & > *
+                display: inline-block
+            h4
+                padding-right: 1.5rem
+                font-size: 2.4rem
+                border-right: 1px solid #ececec
+            p
+                padding-left: 1.5rem
+                font-size: 1.8rem
+                color: $shade-color
+        &-text
+            margin-top: 2rem
+            font-size: 1.6rem
+        &-bottom
+            text-align: right
+        &-img
+            display: inline-block
+            position: absolute
+            bottom: 40px
+            height: 90px
+            width: 90px
+            border-radius: 50%
+            overflow: hidden
+            box-shadow: 2px 0 9px rgba(0,0,0,.1);
+            img
+                display: inline-block
+                height: auto
+                max-width: 100%
+        &-mark
+            fill: #ebebeb

@@ -1,0 +1,127 @@
+@import "colors"
+
+html
+    font-size: 10px
+    height: 100%
+body
+    height: 100%
+    font-family: 'Roboto', sans-serif
+    overflow-x: hidden
+    font-size: 1.8rem
+    color: $main-color
+img
+    max-width: 100%
+h1,h2,h3,h4
+    font-family: 'Playfair Display', serif;
+
+@import "navbar"
+@import "index"
+@import "students"
+@import "contacts"
+
+.button-main, .wp-block-file__button
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 11px 32px;
+    font-size: 14px;
+    line-height: 24px;
+    border: 2px solid;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    transition: 250ms all ease-in-out;
+    border-radius: 25px;
+    color: $main-color
+    background-color: $active-color
+    border-color: $active-color
+    &:hover
+        background-color: $active-button-color
+        border-color: $active-button-color
+    &:active
+        background-color: $active-button-color
+        border-color: $active-button-color
+    &:focus
+        outline: none
+.row
+    h2
+        text-align: left
+    .divider
+        text-align: left
+.divider
+    text-align: center
+    &:after
+        content: ''
+        display: inline-block
+        background-color: $active-color
+        width: 120px
+        height: 3px
+.info 
+        margin-top: 2rem
+        font-size: 1.8rem
+.subinfo
+    margin-top: 2rem
+    font-size: 1.6rem
+    color: $shade-color
+
+.wrapper
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+.content
+    flex-grow: 1
+    &-main
+        margin: 5rem 0
+        h2
+            font-size: 3.8rem
+        h4
+            font-size: 2.4rem
+    &-text
+        margin-right: 8rem
+
+.sidebar
+    &-block
+        padding: 2rem 0
+        border-bottom: 1px solid #e7e7e7
+        &:first-child
+            padding-top: 0
+        &:last-child
+            border: none
+    &-list
+        ul
+            list-style: none
+            padding: 2rem 0
+            li
+                padding: .5rem 0
+                a
+                    font-weight: 400
+                    color: $shade-color
+                    text-decoration: none
+                    transition: all .3s
+                    &:before
+                        font-family: "Font Awesome 5 Free"
+                        font-weight: 900
+                        font-size: 1.4rem
+                        content: "\f105"
+                        display: inline-block
+                        min-width: 25px
+                        color: $shade-color
+                        transition: all .3s
+                    &:hover
+                        color: $active-button-color
+                        &:before
+                            color: $active-button-color
+
+footer
+    padding: 3rem
+    text-align: center
+    background-color: $section2
+    color: $main-color
+
