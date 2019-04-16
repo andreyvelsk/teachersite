@@ -13,6 +13,17 @@
     <!--page-->
     <div class="container content">
         <div class="row content-main">
+
+             <?php
+                if (!is_user_logged_in()) {
+                    echo "sign in";
+                    wp_login_form(array('echo' => true));
+                    
+                    wp_register();
+                }
+                else {
+
+            ?>
             <!--content-->
             <div class="col-md-8">
                 <div class="content-text">
@@ -78,9 +89,15 @@
 
             <!--sidebar-->
             <div class="col-md-4">
-                <?php get_sidebar();?>
+                <?php get_sidebar("category");?>
             </div>
             <!--/sidebar-->
+
+                <?php
+
+                    }
+
+                ?>
         </div>
     </div>
 

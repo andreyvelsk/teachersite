@@ -18,7 +18,9 @@
             <div class="content-text">
                 <div class="post">
                     <div class="post-text">
+                    <pre>
                         <?php 
+                        print_r($media);
                             if(have_posts()){
                                 the_post();
                                 the_content();

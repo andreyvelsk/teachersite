@@ -9,7 +9,7 @@ Template Name: Главная
     <div class="container main-about">
         <div class="row">
             <div class="col-md-6">
-                <h1>Имя Фамилия</h1>
+                <h1>Елена Деточенко</h1>
                 <div class="divider"></div>
                 <div class="subinfo">
                    <?php
@@ -89,9 +89,11 @@ Template Name: Главная
             </div>
         </div>
         <div class="sectionimages-more">
-                <button class="button-main">
-                        Посмотреть остальные
-                </button>
+                <a href="/сертификаты">
+                    <button class="button-main">
+                            Посмотреть остальные
+                    </button>
+                </a>
         </div>
     </div>
 </section>
@@ -101,7 +103,7 @@ Template Name: Главная
         <h2>Мои работы</h2>
         <div class="divider"></div>
         <p class="subinfo">
-            Мои работы и работы моих учеников
+            Мои работы
         </p>
         <div class="row section-content">
             <div class="col-md-3">
@@ -126,9 +128,11 @@ Template Name: Главная
             </div>
         </div>
         <div class="sectionimages-more">
-            <button class="button-main">
-                Посмотреть остальные
-            </button>
+        <a href="/портфолио">
+                    <button class="button-main">
+                            Посмотреть остальные
+                    </button>
+                </a>
         </div>
     </div>
 </section>

@@ -8,7 +8,7 @@ Template Name: Контакты
         <div class="container">
             <div class="title-text">
                 <h1>
-                    Контакты
+                <?php the_title(); ?>
                 </h1>
             </div>
         </div>
