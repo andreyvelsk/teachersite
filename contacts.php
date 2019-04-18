@@ -15,7 +15,7 @@ Template Name: Контакты
     </div>
 
     <!--page-->
-    <div class="container content">
+    <section class="container content">
         <div class="row content-main">
             <!--content-->
             <div class="col-md-8">
@@ -132,7 +132,7 @@ Template Name: Контакты
             </div>
             <!--/sidebar-->
         </div>
-    </div>
+    </section>
     
         <!--page-->
 <?php get_footer(); ?>

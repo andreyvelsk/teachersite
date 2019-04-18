@@ -1,7 +1,7 @@
 .top-navbar
     font-family: 'Montserrat', sans-serif
     font-size: 1.6rem
-    border-bottom: 2px solid #ececec
+    border-bottom: 2px solid $shade-border
     background-color: $navbar
 .mainnavbar
     &-logo
@@ -14,15 +14,17 @@
         display: flex
         justify-content: flex-end
         margin: 0
-        li
+        >li
             text-align: center
             a
                 position: relative
                 display: block
+                text-decoration: none
+                letter-spacing: 0.05rem
+                color: $main-color
+            >a
                 padding: 1rem 0
                 margin: 1rem 2rem
-                text-decoration: none
-                color: $main-color
                 &:after
                     position: absolute;
                     top: 80%;
@@ -34,6 +36,53 @@
                     opacity: 0;
                     transition: opacity 0.3s, transform 0.3s;
                     transform: translateY(10px);
-                &:hover::after
+                &:hover
+                    &::after
+                        opacity: 1
+                        transform: translateY(0px);
+            .sub-menu
+                visibility: hidden;
+                list-style: none
+                padding-left: 0
+                position: absolute;
+                background-color: $navbar
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 5;
+                transition: all .5s
+                opacity: 0
+                transform: translateY(20px);
+                li
+                    text-align: left
+                    &:first-child
+                        border-top: 4px solid $active-color
+                    a
+                        padding: 1rem
+                        transition: all .3s
+                        border-top: 1px solid $shade-border
+                        &:before
+                            font-family: "Font Awesome 5 Free"
+                            font-weight: 900
+                            font-size: 1.4rem
+                            content: "\f105"
+                            display: inline-block
+                            min-width: 25px
+                            color: $shade-color
+                            transition: all .3s
+                            opacity: 0
+                        &:hover
+                            color: $active-button-color
+                            &:before
+                                color: $active-button-color
+                                opacity: 1
+            &:hover
+                .sub-menu
+                    visibility: visible;
                     opacity: 1
+                    transform: translateY(4px);
+
+        .current-menu-item, .current-category-ancestor, .current-post-ancestor, .current_page_ancestor
+            > a
+                &:after
+                    opacity: 1;
                     transform: translateY(0px);

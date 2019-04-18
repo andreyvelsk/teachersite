@@ -75,25 +75,47 @@ Template Name: Главная
             Я постоянно учусь, и совершенствую знания
         </p>
         <div class="row section-content">
-            <div class="col-md-3 sectionimages-item">
-                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
-            </div>
-            <div class="col-md-3 sectionimages-item">
-                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
-            </div>
-            <div class="col-md-3 sectionimages-item">
-                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
-            </div>
-            <div class="col-md-3 sectionimages-item">
-                <img src="<?php bloginfo('template_directory'); ?>/img/certificate.jpg" alt="">
-            </div>
+            <?php
+                    $images = get_attached_media('image', 148);
+                    //echo "<pre>";
+                    
+                    usort($images, function($a,$b){
+                        return ($b->post_date > $a->post_date);
+                    });
+                    if ($images) {
+                        ?>
+                        <?php
+                        $i=0;
+                        foreach ($images as $image) {
+                            ?>
+                                <div class="col-md-3">
+                                    <div class="sectionimages-item">
+                                        <a href="<?=$image->guid?>" data-toggle="lightbox" data-gallery="image-gallery">
+                                            <?= wp_get_attachment_image( $image->ID, 'medium') ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php
+                            $i++;
+                            if($i == 4) break;
+                        }
+                    }
+                    else {
+                        ?>
+                        <p class="subinfo col-md-12">
+                            В данной категории нет записей
+                        </p>
+                        <?php
+                    }
+
+            ?>
         </div>
         <div class="sectionimages-more">
-                <a href="/сертификаты">
-                    <button class="button-main">
-                            Посмотреть остальные
-                    </button>
-                </a>
+            <a href="/сертификаты">
+                <button class="button-main">
+                        Посмотреть все
+                </button>
+            </a>
         </div>
     </div>
 </section>
@@ -106,33 +128,47 @@ Template Name: Главная
             Мои работы
         </p>
         <div class="row section-content">
-            <div class="col-md-3">
-                <div class="sectionimages-item">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sectionimages-item">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sectionimages-item">
-                   <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="sectionimages-item">
-                   <img src="<?php bloginfo('template_directory'); ?>/img/main.jpg" alt="">
-                </div>
-            </div>
+            <?php
+                    $images = get_attached_media('image', 151);
+                    //echo "<pre>";
+                    
+                    usort($images, function($a,$b){
+                        return ($b->post_date > $a->post_date);
+                    });
+                    if ($images) {
+                        ?>
+                        <?php
+                        $i=0;
+                        foreach ($images as $image) {
+                            ?>
+                                <div class="col-md-3">
+                                    <div class="sectionimages-item">
+                                        <a href="<?=$image->guid?>" data-toggle="lightbox" data-gallery="image-gallery">
+                                            <?= wp_get_attachment_image( $image->ID, 'medium') ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php
+                            $i++;
+                            if($i == 4) break;
+                        }
+                    }
+                    else {
+                        ?>
+                        <p class="subinfo col-md-12">
+                            В данной категории нет записей
+                        </p>
+                        <?php
+                    }
+
+            ?>
         </div>
         <div class="sectionimages-more">
-        <a href="/портфолио">
-                    <button class="button-main">
-                            Посмотреть остальные
-                    </button>
-                </a>
+            <a href="/портфолио">
+                <button class="button-main">
+                        Посмотреть все
+                </button>
+            </a>
         </div>
     </div>
 </section>

@@ -11,7 +11,7 @@
     </div>
 
     <!--page-->
-    <div class="container content">
+    <section class="container content">
         <div class="row content-main">
 
              <?php
@@ -99,7 +99,7 @@
 
                 ?>
         </div>
-    </div>
+    </section>
 
     <!--page-->
 
