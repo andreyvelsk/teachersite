@@ -17,7 +17,6 @@ Template Name: Изображения
         <div class="divider"></div>
             <?php
                 $images = get_attached_media('image', get_the_ID());
-                //echo "<pre>";
                 
                 usort($images, function($a,$b){
                     return ($b->post_date > $a->post_date);
