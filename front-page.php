@@ -5,27 +5,29 @@ Template Name: Главная
  ?>
 <?php get_header();  ?>
 
-<section class="main">
-    <div class="container main-about">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Елена Деточенко</h1>
-                <div class="divider"></div>
-                <div class="subinfo">
-                   <?php
-                        if(have_posts()){
-                            the_post();
-                            the_content();
-                        }
-                   ?>
+<div class="main">
+    <section class="main-photo col-md-12">
+        <div class="container main-about">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Елена Деточенко</h1>
+                    <div class="divider"></div>
+                    <div class="subinfo">
+                    <?php
+                            if(have_posts()){
+                                the_post();
+                                the_content();
+                            }
+                    ?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
                 </div>
             </div>
-            <div class="col-md-6">
-
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <section class="achievement">
     <div class="container">
         <h2>
