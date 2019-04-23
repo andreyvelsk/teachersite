@@ -29,3 +29,20 @@ add_filter('excerpt_more', function($more) {
 });
 
 show_admin_bar(false);
+add_theme_support( 'custom-logo' );
+add_theme_support( 'post-thumbnails' );
+
+add_filter("template_include", 'my_theme_redirect'); //проверка на субкатегорию студентам
+function my_theme_redirect($templatefilename) {
+	$category = get_category( get_query_var( 'cat' ) );
+	$dir = dirname(__FILE__);
+	if($category->category_parent == 2)
+		return $dir . '/category-студентам.php';
+
+	return $templatefilename;
+}
+
+function login_form_shortcode() {
+    include dirname( __FILE__ ) . '/loginform.php';
+} // function my_form_shortcode
+add_shortcode( 'login_form_shortcode', 'login_form_shortcode' );

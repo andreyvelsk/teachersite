@@ -13,6 +13,18 @@
     <!--page-->
     <section class="container content">
         <div class="row content-main">
+
+             <?php
+                if (!is_user_logged_in()) {
+                    ?>
+                        <div class="col-md-6">
+                            <?php do_shortcode('[login_form_shortcode]'); ?>
+                        </div>
+                    <?php
+                }
+                else {
+
+            ?>
             <!--content-->
             <div class="col-md-8">
                 <div class="content-text">
@@ -81,6 +93,12 @@
                 <?php get_sidebar("category");?>
             </div>
             <!--/sidebar-->
+
+                <?php
+
+                    }
+
+                ?>
         </div>
     </section>
 

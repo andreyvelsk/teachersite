@@ -5,25 +5,68 @@
     border-bottom: 2px solid $shade-border
     background-color: $navbar
 .mainnavbar
-    &-logo
-        text-align: center
-        padding: 1rem 0
-        margin: 1rem 0
+    &-logo, &-login
+        display: flex
+        justify-content: center
+        align-items: center
+        i
+            transition: all .3s
+        &:hover i
+            color: $active-color
+    &-login
+        font-size: 2rem
+        cursor: pointer
+    [data-loggedin]
+        .profilepopup
+            cursor: default
+            right: 0
+            visibility: hidden;
+            list-style: none
+            position: absolute;
+            background-color: $navbar
+            min-width: 260px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+            z-index: 5;
+            opacity: 0
+            transform: translateY(32px);
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            transition: .3s all .1s
+            &-image
+                min-width: 64px
+            ul
+                list-style: none
+                padding-inline-start: 1rem
+                a
+                    font-weight: 400
+                    font-size: 1.6rem
+                    &:hover
+                        color: $active-color
+        &:hover
+            .profilepopup
+                transition: .3s all 0s
+                visibility: visible;
+                opacity: 1
+                transform: translateY(16px);
+            
+                
+    a
+        position: relative
+        display: block
+        text-decoration: none
+        letter-spacing: 0.05rem
+        transition: all .3s
+        color: $main-color
     &-menu
         width: 100%
         list-style: none
         display: flex
         justify-content: flex-end
         margin: 0
+        padding: 0
         >li
             text-align: center
-            //для всех ссылок
-            a
-                position: relative
-                display: block
-                text-decoration: none
-                letter-spacing: 0.05rem
-                color: $main-color
             //только для ссылок верхнего уровня (исключить sub-menu)
             >a
                 padding: 1rem 0
@@ -73,7 +116,7 @@
                 min-width: 220px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 5;
-                transition: all .5s
+                transition: .3s ease-in-out .1s
                 opacity: 0
                 transform: translateY(20px);
                 li
@@ -105,9 +148,25 @@
                     visibility: visible;
                     opacity: 1
                     transform: translateY(4px);
+                    transition: .3s ease-in-out 0s
 
+//active link navbar
 .current-menu-item, .current-category-ancestor, .current-post-ancestor, .current_page_ancestor
     > a
         &:before
             opacity: 1;
             transform: translateY(0px);
+
+//popup login form
+.login
+    &form
+        background-color: $section2
+        border-radius: 10px
+    &-submit
+        display: flex
+        justify-content: space-between
+//bootstrap, чтобы при popup не пропадал скролл        
+.modal-open
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 0 !important;

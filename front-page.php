@@ -35,7 +35,9 @@ Template Name: Главная
         </h2>
         <div class="divider"></div>
         <p class="subinfo">
-            За более, чем 10 лет работы, я смогла добиться
+            <?php
+                echo get_field('advantages_desc');
+            ?>
         </p>
         <div class="row section-content">
             <div class="col-md-4 achievement-block">
@@ -77,12 +79,13 @@ Template Name: Главная
         <h2>Сертификаты</h2>
         <div class="divider"></div>
         <p class="subinfo">
-            Я постоянно учусь, и совершенствую знания
+            <?php
+                echo get_field('certificates_desc');
+            ?>
         </p>
         <div class="row section-content">
             <?php
                     $images = get_attached_media('image', 148);
-                    //echo "<pre>";
                     
                     usort($images, function($a,$b){
                         return ($b->post_date > $a->post_date);
@@ -118,7 +121,7 @@ Template Name: Главная
         <div class="sectionimages-more">
             <a href="/сертификаты">
                 <button class="button-main">
-                        Посмотреть все
+                    Посмотреть все
                 </button>
             </a>
         </div>
@@ -130,12 +133,13 @@ Template Name: Главная
         <h2>Мои работы</h2>
         <div class="divider"></div>
         <p class="subinfo">
-            Мои работы
+            <?php
+                echo get_field('works_desc');
+            ?>
         </p>
         <div class="row section-content">
             <?php
                     $images = get_attached_media('image', 151);
-                    //echo "<pre>";
                     
                     usort($images, function($a,$b){
                         return ($b->post_date > $a->post_date);
