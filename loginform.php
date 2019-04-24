@@ -1,4 +1,3 @@
-<?php // Template for my form shortcode ?>
 <form name="loginform" id="loginform" action="/wp-login.php" method="post" class="contactform">
 
     <p class="login-username">
@@ -9,15 +8,28 @@
     </p>
 
     <p class="login-remember">
-        <label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" />
+        <label>
+            <input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" />
             Запомнить меня
         </label>
+        
     </p>
 
-    <div class="login-submit">
-        <input type="submit" name="wp-submit" id="wp-submit" class="button-main" value="Войти" tabindex="100" />
-        <input type="hidden" name="redirect_to" value="/" />
-        <input type="submit" name="wp-submit" id="wp-submit" class="button-main" value="Регистрация" tabindex="100" />
+    <div class="login-bottom">
+        <div class="login-submit">
+            <input type="submit" name="wp-submit" id="wp-submit" class="button-main" value="Войти" tabindex="100" />
+            <input type="hidden" name="redirect_to" value="/" />
+        </div>
+        <div class="login-register">
+            <a href="<?= wp_registration_url()?>" title="Регистрация">
+                Регистрация
+            </a>
+            <span class="delimiter">
+            </span>
+            <a href="<?= wp_lostpassword_url()?>" title="Регистрация">
+                Забыли пароль?
+            </a>
+        </div>
     </div>
 
 </form>

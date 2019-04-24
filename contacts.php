@@ -20,15 +20,16 @@ Template Name: Контакты
             <!--content-->
             <div class="col-md-8">
                 <div class="content-text">
-                    <h2>
-                        Свяжитесь со мной
-                    </h2>
-                    <div class="divider"></div>
-                    <p class="subinfo">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam perspiciatis corporis consequatur laborum pariatur magnam, sint asperiores amet quaerat ipsa non aliquam dicta, fugit suscipit ratione eum accusantium sapiente repellat.
-                    </p>
-                    <input class="contactform-input" name="age" type="text" placeholder="Возраст">
-                    <form action="/send.php" method="post" class="contactform">
+                    <div class="post">
+                        <h2>
+                            Свяжитесь со мной
+                        </h2>
+                        <div class="divider"></div>
+                        <p class="subinfo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam perspiciatis corporis consequatur laborum pariatur magnam, sint asperiores amet quaerat ipsa non aliquam dicta, fugit suscipit ratione eum accusantium sapiente repellat.
+                        </p>
+                        <input class="contactform-input" name="age" type="text" placeholder="Возраст">
+                        <form action="/send.php" method="post" class="contactform">
                             <div class="row">
                                 <div class="col-md-6 contactform-row">
                                     <input class="contactform-input" name="name" type="text" placeholder="Имя">
@@ -47,6 +48,7 @@ Template Name: Контакты
                                 </div>
                             </div>
                         </form>
+                    </div>
                 </div>
             </div>
             <!--/content-->
@@ -56,18 +58,12 @@ Template Name: Контакты
                 <div class="sidebar">
                     <div class="sidebar-block">
                         <h4>
-                            Адрес
-                        </h4>
-                        <p class="subinfo">
-                            Россия, Город, улица, дом
-                        </p>                                    
-                    </div>
-                    <div class="sidebar-block">
-                        <h4>
                             Телефон
                         </h4>
                         <p class="subinfo">
-                            2128506
+                            <?php
+                                echo get_field('contacts-phone');
+                            ?>
                         </p>                                    
                     </div>
                     <div class="sidebar-block">
@@ -75,7 +71,9 @@ Template Name: Контакты
                             E-mail
                         </h4>
                         <p class="subinfo">
-                            info@mail.ru
+                            <?php
+                                echo get_field('contacts-email');
+                            ?>
                         </p>                                    
                     </div>
                 </div>

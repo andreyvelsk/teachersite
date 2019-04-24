@@ -116,7 +116,7 @@
                 min-width: 220px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 5;
-                transition: .3s ease-in-out .1s
+                transition: all .3s
                 opacity: 0
                 transform: translateY(20px);
                 li
@@ -148,7 +148,6 @@
                     visibility: visible;
                     opacity: 1
                     transform: translateY(4px);
-                    transition: .3s ease-in-out 0s
 
 //active link navbar
 .current-menu-item, .current-category-ancestor, .current-post-ancestor, .current_page_ancestor
@@ -157,14 +156,6 @@
             opacity: 1;
             transform: translateY(0px);
 
-//popup login form
-.login
-    &form
-        background-color: $section2
-        border-radius: 10px
-    &-submit
-        display: flex
-        justify-content: space-between
 //bootstrap, чтобы при popup не пропадал скролл        
 .modal-open
     overflow: hidden;

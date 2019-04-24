@@ -11,16 +11,20 @@
     <nav class="top-navbar">
         <div class="container-fluid">
             <div class="row mainnavbar">
-                <div class="mainnavbar-logo col-md-2">
+                <div class="mainnavbar-logo col-2">
                     logo
                 </div>
-                <div class="col-md-10">
+                <div class="col-10">
 					<div class="row no-gutters">
 						<div class="col-md-11">
-								<?php 
+							<?php
+								$menuname = "menu-guest";
+								if(is_user_logged_in()) {
+									$menuname = "menu-loggedin";
+								}
 								wp_nav_menu( array(
 									'theme_location'  => '',
-									'menu'            => '',
+									'menu'            => $menuname,
 									'container'       => 'ul',
 									'container_class' => 'mainnavbar-menu',
 									'container_id'    => '',

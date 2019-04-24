@@ -12,12 +12,13 @@
 
     <!--page-->
     <section class="container content">
-        <div class="row content-main">
+        <div class="row content-main justify-content-center">
 
              <?php
                 if (!is_user_logged_in()) {
                     ?>
                         <div class="col-md-6">
+                            <h3>Для просмотра необходима авторизация</h3>
                             <?php do_shortcode('[login_form_shortcode]'); ?>
                         </div>
                     <?php

@@ -24,12 +24,16 @@ Template Name: Колледж
         <!--content-->
         <div class="col-md-8">
             <div class="content-text">
-                <?php
-                    if(have_posts()){
-                        the_post();
-                        the_content();
-                    }
-                ?>
+                <div class="post">
+                    <div class="post-text">
+                        <?php
+                            if(have_posts()){
+                                the_post();
+                                the_content();
+                            }
+                        ?>
+                    </div>    
+                </div>
             </div>
         </div>
         <!--/content-->

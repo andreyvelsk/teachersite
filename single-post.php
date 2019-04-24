@@ -12,7 +12,7 @@
 
 <!--page-->
 <section class="container content">
-    <div class="row content-main">
+    <div class="row content-main justify-content-center">
         <?php
             $categories = get_the_category();
             $for_students = false;
@@ -24,10 +24,12 @@
             }
 
             if (!is_user_logged_in() && $for_students) {
-                echo "sign in";
-                wp_login_form(array('echo' => true));
-                
-                wp_register();
+                ?>
+                    <div class="col-md-6">
+                        <h3>Для просмотра необходима авторизация</h3>
+                        <?php do_shortcode('[login_form_shortcode]'); ?>
+                    </div>
+                <?php
             }
             else {
         ?>
@@ -35,14 +37,14 @@
         <div class="col-md-8">
             <div class="content-text">
                 <div class="post">
-                    <div class="post-text">
+                    <article class="post-text">
                         <?php
                             if(have_posts()){
                                 the_post();
                                 the_content();
                             }
                         ?>
-                    </div>
+                    </article>
                     <div class="post-meta">
                         <span>
                             <?php the_date('d-m-Y H:i'); ?>
