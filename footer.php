@@ -1,5 +1,5 @@
     <footer>
-        ©  2019 All Rights Reserved Privacy Policy
+        ©  2019 <?= get_bloginfo('description')?>
     </footer>
 
 <!--end of wrapper -->

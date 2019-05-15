@@ -29,7 +29,7 @@ Template Name: Контакты
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam perspiciatis corporis consequatur laborum pariatur magnam, sint asperiores amet quaerat ipsa non aliquam dicta, fugit suscipit ratione eum accusantium sapiente repellat.
                         </p>
                         <input class="contactform-input" name="age" type="text" placeholder="Возраст">
-                        <form action="/send.php" method="post" class="contactform">
+                        <form id="form" action="/send.php" method="post" class="contactform">
                             <div class="row">
                                 <div class="col-md-6 contactform-row">
                                     <input class="contactform-input" name="name" type="text" placeholder="Имя">

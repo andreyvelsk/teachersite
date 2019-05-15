@@ -5,6 +5,8 @@
     border-bottom: 2px solid $shade-border
     background-color: $navbar
 .mainnavbar
+    &-hamburger
+        display: none
     &-logo, &-login
         display: flex
         justify-content: center
@@ -94,9 +96,6 @@
                         min-width: 25px
                         transition: all .3s
                         transform: rotate(90deg)
-                    &:hover
-                        &:after
-                            transform: rotate(270deg)
             //при наведении на li
             &:hover>a
                 // появляется полоска

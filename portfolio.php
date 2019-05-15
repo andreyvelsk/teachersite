@@ -10,7 +10,7 @@ Template Name: Изображения
 <section class="container content gallery">
     <div class="content-main">
         <!--content-->
-        <div class="content-text">
+        <div>
             <h1>
                 <?php the_title(); ?>
             </h1>

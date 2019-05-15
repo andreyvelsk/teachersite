@@ -7,16 +7,41 @@
     <?php wp_head(); ?>
 </head>
 <body>
+<!-- Modal login-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content loginform">
+			<div class="modal-body">
+				<?php
+					if (!is_user_logged_in()) {
+						do_shortcode('[login_form_shortcode]');
+					}
+					else {
+						?>
+							<div class="profile">
+								Информация о пользователе
+							</div>
+						<?php
+					}
+				?>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="wrapper">
     <nav class="top-navbar">
         <div class="container-fluid">
             <div class="row mainnavbar">
                 <div class="mainnavbar-logo col-2">
-                    logo
+					<div class="mainnavbar-hamburger">
+						<a class="hamburger-link"><span></span></a>
+					</div>
+					<div>
+					</div>
                 </div>
                 <div class="col-10">
-					<div class="row no-gutters">
-						<div class="col-md-11">
+					<div class="row no-gutters mainnavbar-items">
+						<div class="col-md-11 mainnavbar-navigation">
 							<?php
 								$menuname = "menu-guest";
 								if(is_user_logged_in()) {
@@ -42,7 +67,7 @@
 								) );
 							?>
 						</div>
-						<div class="col-md-1 mainnavbar-login" 
+						<div class="col-1 mainnavbar-login" 
 							<?php
 								if(!is_user_logged_in()) {
 									echo "data-toggle='modal' data-target='#loginModal'";
@@ -99,27 +124,5 @@
 					</div>
                 </div>
             </div>
-		</div>
-		
-		<!-- Modal login-->
-		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content loginform">
-					<div class="modal-body">
-						<?php
-							if (!is_user_logged_in()) {
-								do_shortcode('[login_form_shortcode]');
-							}
-							else {
-								?>
-									<div class="profile">
-										Информация о пользователе
-									</div>
-								<?php
-							}
-						?>
-					</div>
-				</div>
-			</div>
 		</div>
     </nav>

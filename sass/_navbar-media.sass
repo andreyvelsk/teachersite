@@ -1,0 +1,110 @@
+@media (max-width: 1023px)
+    .top-navbar
+        width: 100%
+        position: fixed
+        z-index: 100
+        top: 0
+        background-color: $navbar
+        + *
+            margin-top: 4rem
+    .mainnavbar
+        &-hamburger
+            display: block
+            padding: 0 1rem
+            .hamburger
+                &-link
+                    z-index: 9
+                    display: block
+                    width: 5rem
+                    height: 5rem
+                    cursor: pointer
+                    span, span:before, span:after
+                        display: block
+                        height: 2px
+                        width: 18px
+                        background-color: #333
+                        position: absolute
+                        left: 50%
+                        margin-left: -9px
+                        top: 50%
+                        margin-top: -1px
+                    span:before
+                        transition: all 0.2s
+                        content: ''
+                        margin-top: -6px
+                    span:after
+                        transition: all 0.2s
+                        content: ''
+                        margin-top: 4px
+                    &__active span
+                        background-color: transparent
+                        &:before
+                            transform: rotate(135deg)
+                            margin-top: 0
+                        &:after
+                            transform: rotate(-135deg)
+                            margin-top: 0
+        &-menu
+            width: 100%
+            height: 100%
+            position: fixed
+            left: -100%
+            display: block
+            z-index: 10
+            top: 52px
+            background-color: $navbar
+            overflow-y: auto
+            transition: all .5s
+            padding-bottom: 5rem
+            [aria-current="page"]
+                background-color: $active-color
+            li
+                text-align: left
+                a
+                    padding: 1rem
+                    margin: 0
+                    &:before
+                        display: none
+                    &:not(:last-child):after
+                        display: none
+                    &:hover
+                        background-color: $active-color
+                        color: $main-color
+                .sub-menu
+                    padding-inline-start: 0
+                    display: block
+                    opacity: 1
+                    visibility: visible
+                    position: relative
+                    transform: none
+                    box-shadow: none
+                    li
+                        &:first-child
+                            border: none
+                        a
+                            &:hover
+                                background-color: $active-color
+                                color: $main-color
+                                &:before
+                                    opacity: 0
+                &:hover
+                    .sub-menu
+                        transform: none
+                        
+        .menu_active
+            left: 0
+            .item-active
+                a
+                    &:after
+                        transform: rotate()270deg
+        &-items
+            justify-content: flex-end
+        &-login
+            justify-content: flex-end
+            padding: 1rem 0
+            transition: all .3s
+            opacity: 1
+            visibility: visible
+            &__hidden
+                visibility: hidden
+                opacity: 0
