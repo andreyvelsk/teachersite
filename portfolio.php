@@ -17,12 +17,16 @@ Template Name: Изображения
         <div class="divider"></div>
             <?php
                 $images = get_attached_media('image', get_the_ID());
+                $videos = get_attached_media('video', get_the_ID());
                 
                 usort($images, function($a,$b){
                     return ($b->post_date > $a->post_date);
                 });
+                usort($videos, function($a,$b){
+                    return ($b->post_date > $a->post_date);
+                });
                 //print_r($images);
-                if ($images) {
+                if ($images || $videos) {
                     ?>
                     <div class="subinfo">
                         <?php
@@ -34,19 +38,34 @@ Template Name: Изображения
                     </div>
                     <div class="card-columns portfolioimages">
                     <?php
-                    foreach ($images as $image) {
-                        ?>
-                            <div class="card">
-                                <div class="portfolioimage">
-                                    <a href="<?=$image->guid?>" data-toggle="lightbox" data-gallery="image-gallery">
-                                        <?= wp_get_attachment_image( $image->ID, 'large') ?>
-                                    </a>
+                        foreach ($images as $image) {
+                            ?>
+                                <div class="card">
+                                    <div class="portfolioimage">
+                                        <a href="<?=$image->guid?>" data-toggle="lightbox" data-gallery="image-gallery">
+                                            <?= wp_get_attachment_image( $image->ID, 'large') ?>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php
-                    }
+                            <?php
+                        }
                     ?>
                     </div>
+                    <?php
+                    if($videos) {
+                        ?>
+                        <div class="portfoliovideos">
+                            <?php
+                                foreach ($videos as $video) {
+                                    echo  "<video src=".$video->guid." controls width=100%></video>";
+                                }
+                            ?>
+                        </div>
+
+                        <?php
+
+                    }
+                    ?>
                     <?php
                 }
                 else {
